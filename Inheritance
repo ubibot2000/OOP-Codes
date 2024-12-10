@@ -1,0 +1,65 @@
+#include <iostream>
+using namespace std;
+class Calc{
+protected:
+	int a;
+	int b; 
+public:
+	Calc() {
+		a = 0;
+		b = 0;
+	}
+	Calc(int n, int m) {
+		a = n;
+		b = m;
+	}
+	void print() {
+		cout << "a = " << a << ", b = " << b << endl;
+	}
+};
+class Add : public Calc {
+protected:
+	int c;
+public:
+	Add() : Calc() {
+
+	}
+	Add(int n, int m) {
+		a = n;
+		b = m;
+		c = 0;
+	}
+/*	void print() {
+		cout << "Overriding!\n";
+	}
+*/	
+
+	void sum() {
+		c = a + b;
+	}
+};
+class Mul : public Calc{
+protected:
+	int c;
+public:
+	Mul(){}
+	Mul(int n, int m) {
+		a = n;
+		b = m;
+		c = 0;
+	}
+	void Gob() {
+		c = a * b;
+	}
+};
+void main() {
+	Calc x(3, 5);
+	x.print();
+	Add y(30, 50); 
+	y.sum();
+	y.print();
+	Mul z(300, 500);
+	z.Gob();
+	z.print();
+	system("pause");
+}
