@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+class Complex{
+	int real;
+public:
+	Complex(int a = 0) { real = a; }
+	void change(int real) {
+		this->real = real;
+	}
+	void ShowComplex() { cout << real << endl; }
+};
+void main(){
+	Complex x(3), y(5), z;
+	//x.change(30);
+	x = y;
+	x.ShowComplex();
+	system("pause");
+}
